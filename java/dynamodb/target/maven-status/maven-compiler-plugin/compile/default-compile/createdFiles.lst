@@ -1,0 +1,10 @@
+Main.class
+UserStore$UserEntry.class
+UserStore.class
+MockCI$SessionStartOutput.class
+MockCI$DynamoDBIndex.class
+MockCI$DynamoDBConfig.class
+MockCI$DynamoDBAttribute.class
+MockCI.class
+MockCI$DynamoDBTable.class
+MockCI$MockCIPrefab.class

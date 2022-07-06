@@ -1,0 +1,16 @@
+{
+  "name": "dynamodb_api_key",
+  "version": "1.0.0",
+  "description": "This is a sample project testing a simple API key service backed by dynamodb. It will store, read and delete an item.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1152.0",
+    "axios": "^0.27.2"
+  }
+}
