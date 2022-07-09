@@ -1,0 +1,23 @@
+{
+  "name": "dynamodb-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2",
+    "mockci": "^1.0.6",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.121.0",
+    "@aws-sdk/util-dynamodb": "^3.121.0",
+    "dotenv": "^16.0.1"
+  }
+}
