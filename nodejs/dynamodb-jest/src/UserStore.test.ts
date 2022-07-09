@@ -1,18 +1,7 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { MockCISession, MockCIPrefab, DynamoDBTable, DynamoDBTableSeedData } from 'mockci';
-import UserStore, { UserEntry, USERS_TABLE } from './UserStore';
-
-export const UserTableDefinition: DynamoDBTable = {
-    name: USERS_TABLE,
-    hashKey: 'userId',
-    attributes: [
-        { name: 'userId', type: 'S' },
-        { name: 'email', type: 'S' },
-    ],
-    indexes: [
-        { name: 'email-index', hashKey: 'email' },
-    ]
-}
+import { MockCISession, MockCIPrefab } from 'mockci';
+import { UserTableDefinition } from './Definitions';
+import UserStore, { UserEntry } from './UserStore';
 
 const makeConfiguredUserStore = async (seedData: UserEntry[]) => {
     const prefab: MockCIPrefab = {

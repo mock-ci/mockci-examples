@@ -6,5 +6,4 @@ module.exports = {
   verbose: true,
   detectOpenHandles: true,
   maxConcurrency: 10,
-  maxWorkers: '50%',
 };

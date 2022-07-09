@@ -1,17 +1,9 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { DynamoDBTable, MockCIPrefab, MockCISession } from "mockci";
+import { MockCIPrefab, MockCISession } from "mockci";
 import { AccountEntry, ACCOUNTS_TABLE } from './AccountStore';
 import { UserEntry } from './UserStore';
-import { UserTableDefinition } from "./UserStore.test";
 import AccountStore from './AccountStore';
-
-export const AccountTableDefinition: DynamoDBTable = {
-    name: ACCOUNTS_TABLE,
-    hashKey: 'accountId',
-    attributes: [
-        { name: 'accountId', type: 'S' }
-    ]
-}
+import { AccountTableDefinition, UserTableDefinition } from "./Definitions";
 
 const makeConfiguredUserStore = async (accounts: AccountEntry[], users: UserEntry[]) => {
     const prefab: MockCIPrefab = {
@@ -25,9 +17,9 @@ const makeConfiguredUserStore = async (accounts: AccountEntry[], users: UserEntr
 
     //this is needed to convince jest we dont have an open handle
     await process.nextTick(() => {});
-    const session = await MockCISession.start({ 
+    const session = await MockCISession.start({
         prefab,
-        apiKey: process.env.MOCKCI_API_KEY 
+        apiKey: process.env.MOCKCI_API_KEY
     })
     const client = new DynamoDBClient({ endpoint: session.dynamodbEndpoint });
     return new AccountStore(client)
